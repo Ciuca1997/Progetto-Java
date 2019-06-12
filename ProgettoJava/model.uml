@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_YJcjQIg2EempwNhGWgnG5g" name="NewModel">
   <packagedElement xmi:type="uml:Class" xmi:id="_Sv4R0Iz9Eemv9PITsEgp_g" name="Main" visibility="public"/>
-  <packagedElement xmi:type="uml:Class" xmi:id="_78N3UIz9Eemv9PITsEgp_g" name="Json" visibility="public"/>
-  <packagedElement xmi:type="uml:Class" xmi:id="_RTmEkIz-Eemv9PITsEgp_g" name="CSV" visibility="public"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_78N3UIz9Eemv9PITsEgp_g" name="Json" visibility="public">
+    <ownedAttribute xmi:id="_3s8IwI0kEem524rR4EUdvQ" name="String csv_url" visibility="private"/>
+    <ownedOperation xmi:id="_nQm5MI0kEem524rR4EUdvQ" name="json">
+      <ownedParameter xmi:id="_ugSL8I0kEem524rR4EUdvQ" name="String json_url"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_BMRJ8I0lEem524rR4EUdvQ" name="get_url_csv() : String"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_RTmEkIz-Eemv9PITsEgp_g" name="CSV" visibility="public">
+    <ownedBehavior xmi:type="uml:Activity" xmi:id="_O8758I0kEem524rR4EUdvQ" name="CSV activity"/>
+    <ownedOperation xmi:id="_cD4iEI0kEem524rR4EUdvQ" name=""/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_jei80I0kEem524rR4EUdvQ" name="CSV" visibility="public"/>
 </uml:Model>
