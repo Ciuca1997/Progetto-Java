@@ -12,5 +12,12 @@
     <ownedBehavior xmi:type="uml:Activity" xmi:id="_O8758I0kEem524rR4EUdvQ" name="CSV activity"/>
     <ownedOperation xmi:id="_cD4iEI0kEem524rR4EUdvQ" name=""/>
   </packagedElement>
-  <packagedElement xmi:type="uml:Class" xmi:id="_jei80I0kEem524rR4EUdvQ" name="CSV" visibility="public"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_jei80I0kEem524rR4EUdvQ" name="CSV" visibility="public">
+    <ownedAttribute xmi:id="_lmPfYJHVEemhdanj58yFWg" name="HashMap&lt;String,ArrayList&lt;String>>csv_parsed_data"/>
+    <ownedOperation xmi:id="_PMjgkJHVEemhdanj58yFWg" name="Csv(Json)"/>
+    <ownedOperation xmi:id="_rvHiIJHVEemhdanj58yFWg" name="get_csv_parsed_data():HashMap&lt;String,ArrayList&lt;String>>"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_g21e4JGyEemxYKUopOZZyQ" name="controller" visibility="public">
+    <generalization xmi:id="_tqOR0JGyEemxYKUopOZZyQ"/>
+  </packagedElement>
 </uml:Model>
