@@ -3,6 +3,7 @@ metodo controllo flusso
 classe json
 classe csv
 classe controller
+classe doctor
 -controllo flusso
 inizializza json
 inizializza csv con classe json
@@ -14,8 +15,7 @@ se assente lo scarica in locale
 ne fa il parsing e inizializza una variabile al suo interno contenente url csv
 -classe csv 
 inizializzata con classe json e ne prende la variabile url e scarica il csv senza fare cache
-lo parsa e lo mappa 
+lo parsa e crea array di classi doctor
 -classe controller
-inizializzata con classe csv
-definisce tutte le callback e risponde accedendo alla mappa di csv
+inizializzata con classe csv e appllica metodo filter
 
