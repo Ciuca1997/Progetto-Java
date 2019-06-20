@@ -1,5 +1,4 @@
 -struttura programma:
-metodo controllo flusso
 classe json
 classe csv
 classe controller
@@ -17,5 +16,5 @@ ne fa il parsing e inizializza una variabile al suo interno contenente url csv
 inizializzata con classe json e ne prende la variabile url e scarica il csv senza fare cache
 lo parsa e crea array di classi doctor
 -classe controller
-inizializzata con classe csv e appllica metodo filter
+inizializzata con classe csv e appllica i filtri
 
