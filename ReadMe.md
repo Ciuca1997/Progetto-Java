@@ -17,4 +17,12 @@ c)Il controller istanzia le classi json e csv per poi definire tutte le callback
 d)doctor classe che provvede ad un unico metodo per la restituizione della hasmap al fine di caricarci i valori desiderati
 e)classe non usata nel progetto finale ed utile solo in caso di test
 
+-filtri implementati:
+  in,not,gt,lt
+-statistiche:
+  count(unica applicabile per questo tipo di dataset)
+  
+-bug:
+  impossibile gestire array di parametri causa errore non gestibile del rest controller in presenza di parentesi quadre
+  impossibile gestire riavvio del server in caso di errore perchè non inseribile all'interno di un try,catch
 
