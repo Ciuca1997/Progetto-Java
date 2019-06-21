@@ -1,18 +1,27 @@
 -struttura programma:
-classe json
-classe csv
-classe controller
-classe doctor
--classe json
-va inizializzata con url json
-verifica se file presente o meno in locale
-se assente lo scarica in locale
-ne fa il parsing e inizializza una variabile al suo interno contenente url csv
--classe csv 
-inizializzata con classe json e ne prende la variabile url e scarica il csv senza fare cache
-lo parsa e crea array di classi doctor
+  classe json
+  classe csv
+  classe controller
+  classe doctor
+  classe json
+-json
+  va inizializzata con url json
+  verifica se file presente o meno in locale
+  se assente lo scarica in locale
+  ne fa il parsing e inizializza una variabile al suo interno contenente url csv
+-csv 
+  inizializzata con classe json e ne prende la variabile url e scarica il csv senza fare cache
+  lo parsa e crea array di classi doctor
 -classe controller
-inizializzata con classe csv e appllica i filtri e risponde alla richiesta http
+  inizializzata con classe csv e appllica i filtri e risponde alla richiesta http
 -classe doctor
-contiene hasmap con i campi relativi al medico
+  contiene hasmap con i campi relativi al medico
 
+-filtri implementati:
+  in,not,gt,lt
+-statistiche:
+  count(unica applicabile per questo tipo di dataset)
+  
+-bug:
+  impossibile gestire array di parametri causa errore non gestibile del rest controller
+  impossibile gestire riavvio del server in caso di errore perchè non inseribile all'interno di un try,catch
