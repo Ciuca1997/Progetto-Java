@@ -1,19 +1,20 @@
 Progetto Programmazione ad oggetti
 
-1)Descrizione: il progetto consiste in un programma in grado di scaricare un file CSV tramite link ottenuto da un file Json scaricato anch'esso da internet. Inoltre il programma consentirà all'utente di richiedere statistiche campi ed altre informazioni dal file CSV tramite richieste di POST e GET.
+1)Descrizione: il progetto assegnatoci consiste di un programma capace di fare parsing ed elaborazione dati per poi restituirli. 
+I passi essenziali dell'elaborazione sono:il creare un file locale json che punta alle risorse in formato csv,elaborare il csv incapsulando i dati in opportune strutture e restituirli quando richiesti dopo l'applicazione di opportune statistiche e filtri.
 
-2)Costruzione progetto:
-Il progetto consiste in quattro componenti:
+2)Struttura progetto:
+Il progetto consiste in cinque classi di cui quattro operative ed una di test:
 a)json (classe che gestisce il json)
 b)csv (classe che gestisce il csv)
-c)controller(classe che gestisce richieste )
-d)flow_control(metodo che gestisce il flusso del programma)
+c)controller (classe che gestisce richieste ed esegue filtraggio e statistica)
+d)doctor (classe utile all'incapsulamento dei dati inerenti ai dottori)
+e)test_csv (classe non impiegata nel programma finale usata per testare le funzioni di lettura)
 
-a)La classe json ha il compito di scaricare e di ricercare il link al file CSV che dovrà poi essere analizzato. Essa è composta da:
-il costruttore che si occupa del caching e della ricerca dell'url e del metodo di get per ritornare l'url del CSV.
-b)La classe csv si occupa del download del file CSV , del suo parsing e del  mapping ,senza salvare il file in memoria.
-c)La classe controller è la classe che si occupa della gestione delle richieste dell'utente.
-d)Il flow_controller si occupa dell'inizializzazione delle classi.
-
+a)Richiede in ingresso l'url del file json e provvede se non presente alla creazione di una copia locale. Fatto ciò si occupa di estrarne l'url del csv che potrà essere estratto tramite opportuno metodo
+b)Data in ingresso la classe json provvede ad estrarne l'url di interesse mediante opportuno metodo. Elabora la risorsa remota incapsulando i dati nelle classi dottore e cui si potrà accedere tramite metodo get.
+c)Il controller istanzia le classi json e csv per poi definire tutte le callback che gestiscono le richieste post e get
+d)doctor classe che provvede ad un unico metodo per la restituizione della hasmap al fine di caricarci i valori desiderati
+e)classe non usata nel progetto finale ed utile solo in caso di test
 
 
