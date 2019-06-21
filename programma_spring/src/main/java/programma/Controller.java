@@ -17,7 +17,7 @@ public class Controller {
 	//gestione ritorno metadati
 	@RequestMapping(value="/metadata",produces = "application/json")
 	public String metadati() {
-		String result="[\n"
+		String result="[\r\n"
 				+ "{\r\n"
 				+ "\"alias\":\"CodiceRegione\",\r\n"
 				+ "\"sourceField\":\"Codice della regione\",\r\n"
@@ -146,19 +146,15 @@ public class Controller {
 	//vengono eseguite su json elaborato da eventuali filtri
 	@RequestMapping(value="/stats",produces = "application/json")
 	public String stat(@RequestParam Map<String,String> params)throws Exception {
-		String resp="[";
 		String filter=params.get("filter");
 		HashMap<String, String>arg=new HashMap<String, String>();
 		arg.put("filter", filter);
 		String result=data(arg);
 		String value=params.get("field");
-		int count=-1;
-		int old_index=0;
-		while(result.indexOf(value,old_index+1)!=-1) {
-			old_index=result.indexOf(value,old_index+1);
-			count++;
-		}
-		resp+="{\r\n"
+		value=value.replace("\"","");
+		value=value.replace(" ","");
+		int count=result.split("\""+value+"\"").length-1;
+		String resp="[\r\n{\r\n"
 			+"\"field\":\""+value+"\",\r\n"
 			+"\"count\":\""+String.valueOf(count)+"\"\r\n}\r\n]";
 		return resp;
