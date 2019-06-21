@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_YJcjQIg2EempwNhGWgnG5g" name="NewModel">
+  <packagedElement xmi:type="uml:Class" xmi:id="_Sv4R0Iz9Eemv9PITsEgp_g" name="Main" visibility="public">
+    <ownedOperation xmi:id="_3c_lsJQeEemLYu2pMmKERA" name="main(String []):int"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_78N3UIz9Eemv9PITsEgp_g" name="Json" visibility="public">
+    <ownedAttribute xmi:id="_3s8IwI0kEem524rR4EUdvQ" name="String csv_url" visibility="private"/>
+    <ownedOperation xmi:id="_nQm5MI0kEem524rR4EUdvQ" name="json">
+      <ownedParameter xmi:id="_ugSL8I0kEem524rR4EUdvQ" name="String json_url"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_BMRJ8I0lEem524rR4EUdvQ" name="get_url_csv() : String"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_RTmEkIz-Eemv9PITsEgp_g" name="CSV" visibility="public">
+    <ownedBehavior xmi:type="uml:Activity" xmi:id="_O8758I0kEem524rR4EUdvQ" name="CSV activity"/>
+    <ownedOperation xmi:id="_cD4iEI0kEem524rR4EUdvQ" name=""/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_jei80I0kEem524rR4EUdvQ" name="CSV" visibility="public">
+    <ownedAttribute xmi:id="_lmPfYJHVEemhdanj58yFWg" name="doctors:ArrayList&lt;Doctors>" visibility="private"/>
+    <ownedOperation xmi:id="_PMjgkJHVEemhdanj58yFWg" name="Csv(Json)"/>
+    <ownedOperation xmi:id="_rvHiIJHVEemhdanj58yFWg" name="get_doctors():ArrayList&lt;Doctor>"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_g21e4JGyEemxYKUopOZZyQ" name="controller" visibility="public">
+    <templateBinding xmi:id="_V_PnEJQfEemLYu2pMmKERA"/>
+    <templateBinding xmi:id="_WvQuwJQfEemLYu2pMmKERA"/>
+    <generalization xmi:id="_tqOR0JGyEemxYKUopOZZyQ"/>
+    <ownedAttribute xmi:id="_tIxj4JQeEemLYu2pMmKERA" name="csv:Csv"/>
+    <ownedOperation xmi:id="_5lhN4JQdEemLYu2pMmKERA" name="metadati():String"/>
+    <ownedOperation xmi:id="_-Jl2AJQdEemLYu2pMmKERA" name="data(Map&lt;String,String>): String"/>
+    <ownedOperation xmi:id="_TJHj8JQeEemLYu2pMmKERA" name="stat(Map&lt;String,String>): String"/>
+    <ownedOperation xmi:id="_bhp8MJQeEemLYu2pMmKERA" name="Controller"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_tMl1QJQQEemLYu2pMmKERA" name="Doctor" visibility="public">
+    <ownedAttribute xmi:id="_wraskJQQEemLYu2pMmKERA" name="attributes:HashMap &lt;String,String> " visibility="private"/>
+    <ownedOperation xmi:id="__EntIJQYEemLYu2pMmKERA" name="get_attributes():HashMap&lt;String,String>"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_LIvpgJQdEemLYu2pMmKERA"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_yqTdUJQfEemLYu2pMmKERA" name="main richiama controller" memberEnd="_yqTdUZQfEemLYu2pMmKERA _yqUrcpQfEemLYu2pMmKERA" navigableOwnedEnd="_yqUrcpQfEemLYu2pMmKERA">
+    <ownedEnd xmi:id="_yqTdUZQfEemLYu2pMmKERA" name="mains" type="_Sv4R0Iz9Eemv9PITsEgp_g" association="_yqTdUJQfEemLYu2pMmKERA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yqUrcJQfEemLYu2pMmKERA"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yqUrcZQfEemLYu2pMmKERA" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_yqUrcpQfEemLYu2pMmKERA" name="controllers" type="_g21e4JGyEemxYKUopOZZyQ" association="_yqTdUJQfEemLYu2pMmKERA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yqVSgJQfEemLYu2pMmKERA"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yqVSgZQfEemLYu2pMmKERA" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_32428JQfEemLYu2pMmKERA" name="controller richiama json" memberEnd="_32428ZQfEemLYu2pMmKERA _325eApQfEemLYu2pMmKERA" navigableOwnedEnd="_325eApQfEemLYu2pMmKERA">
+    <ownedEnd xmi:id="_32428ZQfEemLYu2pMmKERA" name="controllers" type="_g21e4JGyEemxYKUopOZZyQ" association="_32428JQfEemLYu2pMmKERA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_325eAJQfEemLYu2pMmKERA"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_325eAZQfEemLYu2pMmKERA" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_325eApQfEemLYu2pMmKERA" name="jsons" type="_78N3UIz9Eemv9PITsEgp_g" association="_32428JQfEemLYu2pMmKERA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_326FEJQfEemLYu2pMmKERA"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_326FEZQfEemLYu2pMmKERA" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_7PDsoJQfEemLYu2pMmKERA" name="controller richiama csv" memberEnd="_7PDsoZQfEemLYu2pMmKERA _7PETsZQfEemLYu2pMmKERA" navigableOwnedEnd="_7PETsZQfEemLYu2pMmKERA">
+    <ownedEnd xmi:id="_7PDsoZQfEemLYu2pMmKERA" name="controllers" type="_g21e4JGyEemxYKUopOZZyQ" association="_7PDsoJQfEemLYu2pMmKERA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_7PDsopQfEemLYu2pMmKERA"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_7PETsJQfEemLYu2pMmKERA" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_7PETsZQfEemLYu2pMmKERA" name="cSVs" type="_jei80I0kEem524rR4EUdvQ" association="_7PDsoJQfEemLYu2pMmKERA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_7PETspQfEemLYu2pMmKERA"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_7PETs5QfEemLYu2pMmKERA" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_-1-wAJQfEemLYu2pMmKERA" name="Csv richiama Doctor" memberEnd="_-1-wAZQfEemLYu2pMmKERA _-1_XEZQfEemLYu2pMmKERA" navigableOwnedEnd="_-1_XEZQfEemLYu2pMmKERA">
+    <ownedEnd xmi:id="_-1-wAZQfEemLYu2pMmKERA" name="cSVs" type="_jei80I0kEem524rR4EUdvQ" association="_-1-wAJQfEemLYu2pMmKERA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_-1-wApQfEemLYu2pMmKERA"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_-1_XEJQfEemLYu2pMmKERA" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_-1_XEZQfEemLYu2pMmKERA" name="doctors" type="_tMl1QJQQEemLYu2pMmKERA" association="_-1-wAJQfEemLYu2pMmKERA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_-1_XEpQfEemLYu2pMmKERA"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_-1_XE5QfEemLYu2pMmKERA" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+</uml:Model>
