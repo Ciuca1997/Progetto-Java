@@ -139,6 +139,25 @@ public class Controller {
 				resp=resp.substring(0,resp.length()-1);
 				resp+="]";
 			}
+			if(command.equals("lt")==true) {
+				startindex=filter.indexOf("{");
+				endindex=filter.indexOf(":",startindex+1);
+				String field=filter.substring(startindex+1,endindex);
+				startindex=filter.indexOf(":");
+				startindex=filter.indexOf(":",startindex+1);
+				endindex=filter.indexOf("}",startindex+1);
+				String value=filter.substring(startindex+1,endindex);
+				for(int cur=0;cur<csv.get_doctors().size();cur++) {
+					try {				
+						if(Integer.parseInt(csv.get_doctors().get(cur).get_attributes().get(field))<Integer.parseInt(value)) {
+							resp+=csv.get_doctors().get(cur).tojson()+",";
+						}
+					}
+					catch(Exception ex) {}
+				}
+				resp=resp.substring(0,resp.length()-1);
+				resp+="]";
+			}
 		}
 		return resp;
 	}
