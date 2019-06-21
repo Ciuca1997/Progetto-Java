@@ -12,8 +12,14 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Csv {
+	/**
+	 * class that manage all information in csv file
+	 */
 	private ArrayList<Doctor>doctors=new ArrayList<Doctor>();//mappa dati csv
 	public Csv(Json json) {
+		/**
+		 * inizializes array of doctor with parsed field
+		 */
 		String url=json.get_url_csv();//prendo l'url di riferimento
 		InputStream in;//usato come stream di input generale
 		byte[] buffer=new byte[1024];//variabile usata come buffer temporaneo
@@ -55,6 +61,9 @@ public class Csv {
 		}
 	}
 	public ArrayList<Doctor> get_doctors() {
+		/**
+		 * return array of doctor
+		 */
 		return doctors;
 	}
 

@@ -13,10 +13,16 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class Controller {
-	Csv csv;
+	/**
+	 * class that initializes json,csv and manage all request 
+	 */
+	private Csv csv;
 	//gestione ritorno metadati
 	@RequestMapping(value="/metadata",produces = "application/json")
 	public String metadati() {
+		/**
+		 * return list of field
+		 */
 		String result="[\r\n"
 				+ "{\r\n"
 				+ "\"alias\":\"CodiceRegione\",\r\n"
@@ -64,6 +70,9 @@ public class Controller {
 	//impossibile gestire array perchè con le parentesi quadre errore di ricezione
 	@RequestMapping(value="/data",produces = "application/json")
 	public String data(@RequestParam Map<String,String> params)throws Exception {
+		/***
+		 * this method parse,apply filter and finally return data in json format
+		 */
 		String resp="[";
 		String filter=params.get("filter");
 		if(filter==null) {
@@ -165,6 +174,9 @@ public class Controller {
 	//vengono eseguite su json elaborato da eventuali filtri
 	@RequestMapping(value="/stats",produces = "application/json")
 	public String stat(@RequestParam Map<String,String> params)throws Exception {
+		/**
+		 * method that apply statistics to json filtering it and finally return json data
+		 */
 		String filter=params.get("filter");
 		HashMap<String, String>arg=new HashMap<String, String>();
 		arg.put("filter", filter);
@@ -179,6 +191,9 @@ public class Controller {
 		return resp;
 	}
 	public Controller() {
+		/**
+		 * initializes json and csv class
+		 */
 		//flusso inizializzazioni
 		Json json=new Json("https://www.dati.gov.it/api/3/action/package_show?id=f9b81f42-9062-4caf-ba66-834123ced808");
 		System.out.println("csv @ "+json.get_url_csv());

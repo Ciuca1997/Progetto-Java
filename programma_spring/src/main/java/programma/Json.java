@@ -15,8 +15,14 @@ import java.net.URL;
 import java.util.Arrays;
 
 public class Json {
+	/**
+	 * manage json source and read csv url
+	 */
 	private String url_csv;//variabile che immagazzina url csv
 	public Json(String url_json) {
+		/**
+		 * parsing json file and save csv url
+		 */
 		byte[] buffer=new byte[1024];//variabile usata come buffer temporaneo
 		InputStream in;//usato come stream di input generale
 		OutputStream out;//output stream generale
@@ -71,6 +77,9 @@ public class Json {
 		}
 	}
 	public String get_url_csv() {//permette di accedere alla variabile url_csv
+		/**
+		 * return csv url
+		 */
 		return url_csv;
 	}
 }

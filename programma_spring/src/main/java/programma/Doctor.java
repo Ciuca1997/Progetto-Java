@@ -8,11 +8,20 @@ package programma;
 import java.util.HashMap;
 
 public class Doctor {
+	/**
+	 * doctor class used to map information
+	 */
 	private HashMap<String,String>attributes=new HashMap<String, String>();
 	HashMap<String,String> get_attributes(){
+		/**
+		 * return hasmap where are mapped the attributes
+		 */
 		return attributes;
 	}
 	public String tojson() {
+		/**
+		 * return string that represents all field i json format
+		 */
 		//formatta i campi in json
 		String result="{";
 		for(int cur=0;cur<attributes.keySet().size();cur+=1) {
