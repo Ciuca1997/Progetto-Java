@@ -3,10 +3,6 @@ classe json
 classe csv
 classe controller
 classe doctor
--controllo flusso
-inizializza json
-inizializza csv con classe json
-inizializza controller csv
 -classe json
 va inizializzata con url json
 verifica se file presente o meno in locale
@@ -16,5 +12,7 @@ ne fa il parsing e inizializza una variabile al suo interno contenente url csv
 inizializzata con classe json e ne prende la variabile url e scarica il csv senza fare cache
 lo parsa e crea array di classi doctor
 -classe controller
-inizializzata con classe csv e appllica i filtri
+inizializzata con classe csv e appllica i filtri e risponde alla richiesta http
+-classe doctor
+contiene hasmap con i campi relativi al medico
 
