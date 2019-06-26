@@ -27,6 +27,8 @@ public class Filter {  //filters: in,not,nin,or,and,gt,lt
 
 	//////////////////////////////////////////////////filtersMethods
 	
+	/////////////////////////////////logicalOperators
+	
 	public ArrayList<Doctor> inFilter(String field,ArrayList<String> values) { //inFilter
 		ArrayList<Doctor> doctorsTemp =new ArrayList<Doctor>();
 		for(int i=0;i<values.size();i++ ) {   //cheking all the list's value
@@ -39,6 +41,7 @@ public class Filter {  //filters: in,not,nin,or,and,gt,lt
 		return doctorsTemp;
 	}
 
+	
 	
 	public ArrayList<Doctor> ninFilter(String field,ArrayList<String> values) { //ninFilter
 		ArrayList<Doctor> doctorsTemp =new ArrayList<Doctor>();     
@@ -54,6 +57,7 @@ public class Filter {  //filters: in,not,nin,or,and,gt,lt
 	}
 
 	
+	
 	public ArrayList<Doctor> orFilter(ArrayList<Doctor> doctors1,ArrayList<Doctor> doctors2) { //orFilter
 		ArrayList<Doctor> doctorsTemp=new ArrayList<Doctor>();
 		doctorsTemp=(ArrayList<Doctor>) doctors1.clone();  //copy the first list 
@@ -66,6 +70,7 @@ public class Filter {  //filters: in,not,nin,or,and,gt,lt
 	}
 	
 	
+	
 	public ArrayList<Doctor> andFilter(ArrayList<Doctor> doctors1,ArrayList<Doctor> doctors2) { //andFilter
 		ArrayList<Doctor> doctorsTemp= new ArrayList<Doctor>();
 		doctorsTemp=(ArrayList<Doctor>) doctors1.clone(); //copy the first list 
@@ -76,6 +81,126 @@ public class Filter {  //filters: in,not,nin,or,and,gt,lt
 		}
 		return doctorsTemp;
 	}
+	
+	
+	
+	//////////////////////////////////////conditionalOperators
+	
+	
+	public ArrayList<Doctor> gtFilter(String field,ArrayList<String> values){ //gtFilter
+		ArrayList<Doctor> doctorsTemp= new ArrayList<Doctor>();
+		int numMin;
+		try {           //check if the value is a number
+			numMin=Integer.parseInt(values.get(0));
+		}
+		catch(Exception ex) {
+			System.out.println("the value is not a numeber");
+			return null;   //return null if there is an exception
+		}
+		for(int i=0;i<doctors.size();i++) {
+			try {       //check on the field 
+				if(Integer.parseInt(doctors.get(i).get_attributes().get(field))>numMin) { //check the condiction
+					doctorsTemp.add(doctors.get(i));    //add it to the list 
+				}
+			}
+			catch(Exception ex) {  //if the field does not contains numbers return null
+				System.out.println("selected field does not contain numbers");
+				return null;
+			}
+		}
+		return doctorsTemp;
+	}
+	
+	
+	
+	public ArrayList<Doctor> gteFilter(String field,ArrayList<String> values){ //gteFilter
+		ArrayList<Doctor> doctorsTemp= new ArrayList<Doctor>();
+		int numMin;
+		try {   //check if the value is a number
+			numMin=Integer.parseInt(values.get(0));
+		}
+		catch(Exception ex) {  //return null if there is an exception
+			System.out.println("the value is not a numeber");
+			return null;
+		}
+		for(int i=0;i<doctors.size();i++) {
+			try {         //check on the field 
+				if(Integer.parseInt(doctors.get(i).get_attributes().get(field))>=numMin) {   //check the condiction
+					doctorsTemp.add(doctors.get(i));   //add it to the list
+				}
+			}
+			catch(Exception ex) {    //if the field does not contains numbers return null
+				System.out.println("selected field does not contain numbers");
+				return null;
+			}
+		}
+		return doctorsTemp;
+	}
+	
+	
+	
+	public ArrayList<Doctor> ltFilter(String field,ArrayList<String> values){  //ltFilter
+		ArrayList<Doctor> doctorsTemp= new ArrayList<Doctor>();
+		int numMax;
+		try {		//check if the value is a number
+			numMax=Integer.parseInt(values.get(0));
+		}
+		catch(Exception ex) {    //return null if there is an exception
+			System.out.println("the value is not a numeber");
+			return null;
+		}
+		for(int i=0;i<doctors.size();i++) {  
+			try {			//check on the field 
+				if(Integer.parseInt(doctors.get(i).get_attributes().get(field))<numMax) {   //check the condiction
+					doctorsTemp.add(doctors.get(i));   //add it to the list
+				}
+			}
+			catch(Exception ex) {         //if the field does not contains numbers return null
+				System.out.println("selected field does not contain numbers");
+				return null;
+			}
+		}
+		return doctorsTemp;
+	}
+	
+	
+
+	public ArrayList<Doctor> lteFilter(String field,ArrayList<String> values){   //lteFilter
+		ArrayList<Doctor> doctorsTemp= new ArrayList<Doctor>();
+		int numMax;
+		try {		//check if the value is a number
+			numMax=Integer.parseInt(values.get(0));
+		}
+		catch(Exception ex) {    //return null if there is an exception
+			System.out.println("the value is not a numeber");
+			return null;
+		}
+		for(int i=0;i<doctors.size();i++) {  
+			try {			//check on the field 
+				if(Integer.parseInt(doctors.get(i).get_attributes().get(field))<=numMax) {   //check the condiction
+					doctorsTemp.add(doctors.get(i));   //add it to the list
+				}
+			}
+			catch(Exception ex) {         //if the field does not contains numbers return null
+				System.out.println("selected field does not contain numbers");
+				return null;
+			}
+		}
+		return doctorsTemp;
+	}
+	
+	
+	
+	public ArrayList<Doctor> btFilter(String field,ArrayList<String> values){   //btFilter
+		ArrayList<Doctor> doctorsTemp= new ArrayList<Doctor>();
+		ArrayList<String> value1=new ArrayList<String>();   
+		ArrayList<String> value2=new ArrayList<String>();   
+		value1.add(values.get(0));		//value for gt
+		value2.add(values.get(1));		//value for lt
+		doctorsTemp=andFilter(gtFilter(field,value1),ltFilter(field,value2)); //is used the andFilter for melt the other two filter(lt,gt) 
+		return doctorsTemp;
+	}
+	
 	
 	
 	///////////////////////////////////////////////////getters and setters
