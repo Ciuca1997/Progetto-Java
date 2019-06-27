@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_-UgqMJjLEemxk4EmVtaNRQ" name="NewModel">
+  <packageImport xmi:id="_ebmQgJjOEemxk4EmVtaNRQ">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Class" xmi:id="_FFIpcJjMEemxk4EmVtaNRQ" name="Main" visibility="public">
+    <ownedOperation xmi:id="_ambAoJjMEemxk4EmVtaNRQ" name="main()" isStatic="true">
+      <ownedParameter xmi:id="_TeVHIJjNEemxk4EmVtaNRQ" name="String[]"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_GNpwsJjMEemxk4EmVtaNRQ" name="Controller" visibility="public">
+    <ownedAttribute xmi:id="_rRa-UJjMEemxk4EmVtaNRQ" name="Csv csv"/>
+    <ownedOperation xmi:id="_y2Is8JjMEemxk4EmVtaNRQ" name="Controller"/>
+    <ownedOperation xmi:id="_zE3FcJjMEemxk4EmVtaNRQ" name="stat(Map&lt;String,String> param):HashMap&lt;String,String>">
+      <ownedComment xmi:id="_2ucl0JjNEemxk4EmVtaNRQ" annotatedElement="_zE3FcJjMEemxk4EmVtaNRQ">
+        <body>
+</body>
+      </ownedComment>
+    </ownedOperation>
+    <ownedOperation xmi:id="_zaewIJjMEemxk4EmVtaNRQ" name="data(Map&lt;String,String> param):ArrayList&lt;Doctor>"/>
+    <ownedOperation xmi:id="_8ki2gJjNEemxk4EmVtaNRQ" name="metadati():ArrayList&lt;Metadata>"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_HhCrMJjMEemxk4EmVtaNRQ" name="Filter" visibility="public">
+    <ownedAttribute xmi:id="_XcEgUJjTEemxk4EmVtaNRQ" name="String field" visibility="private"/>
+    <ownedAttribute xmi:id="_aeAnUJjTEemxk4EmVtaNRQ" name="String operator"/>
+    <ownedAttribute xmi:id="_cH1E0JjTEemxk4EmVtaNRQ" name="ArrayList&lt;String> values"/>
+    <ownedOperation xmi:id="_fIicwJjTEemxk4EmVtaNRQ" name="Filter(HashMap&lt;String,Object> mappedjason)"/>
+    <ownedOperation xmi:id="_fYUlMJjTEemxk4EmVtaNRQ" name="get_field():String"/>
+    <ownedOperation xmi:id="_fyzhwJjTEemxk4EmVtaNRQ" name="get_operator():String"/>
+    <ownedOperation xmi:id="_g9dXAJjTEemxk4EmVtaNRQ" name="get_values():ArrayList&lt;String>"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_JuDVUJjMEemxk4EmVtaNRQ" name="FiltersManager" visibility="public">
+    <ownedAttribute xmi:id="_G7AsUJjUEemxk4EmVtaNRQ" name="ArrayList&lt;Doctor> doctors" visibility="private"/>
+    <ownedAttribute xmi:id="_Ko1B4JjUEemxk4EmVtaNRQ" name="ArrayList&lt;Doctor> result" visibility="private"/>
+    <ownedOperation xmi:id="_O0NdMJjUEemxk4EmVtaNRQ" name="FiltersManager(String jsonFilter,Csv csv)"/>
+    <ownedOperation xmi:id="_PBz0UJjUEemxk4EmVtaNRQ" name="execute_filter(String field,String operator,ArrayList&lt;String>values,ArrayList&lt;Doctor>doctors):ArrayList&lt;Doctor>"/>
+    <ownedOperation xmi:id="_PNW9AJjUEemxk4EmVtaNRQ" name="inFilter(String field, ArrayList&lt;String> values) :ArrayList&lt;Doctor>"/>
+    <ownedOperation xmi:id="_PaOUUJjUEemxk4EmVtaNRQ" name="ninFilter(String field, ArrayList&lt;String> values):ArrayList&lt;Doctor>"/>
+    <ownedOperation xmi:id="_oT15QJjUEemxk4EmVtaNRQ" name="orFilter(ArrayList&lt;Doctor> doctors1, ArrayList&lt;Doctor> doctors2):ArrayList&lt;Doctor>"/>
+    <ownedOperation xmi:id="_ogwT4JjUEemxk4EmVtaNRQ" name="andFilter(ArrayList&lt;Doctor> doctors1, ArrayList&lt;Doctor> doctors2):ArrayList&lt;Doctor>"/>
+    <ownedOperation xmi:id="_oubjgJjUEemxk4EmVtaNRQ" name="gtFilter(String field, ArrayList&lt;String> values):ArrayList&lt;Doctor>"/>
+    <ownedOperation xmi:id="_5fJusJjUEemxk4EmVtaNRQ" name="gteFilter(String field, ArrayList&lt;String> values):ArrayList&lt;Doctor>"/>
+    <ownedOperation xmi:id="_7H51MJjUEemxk4EmVtaNRQ" name="ltFilter(String field, ArrayList&lt;String> values):ArrayList&lt;Doctor>"/>
+    <ownedOperation xmi:id="_9FZcoJjUEemxk4EmVtaNRQ" name="lteFilter(String field, ArrayList&lt;String> values):ArrayList&lt;Doctor>"/>
+    <ownedOperation xmi:id="__Yij8JjUEemxk4EmVtaNRQ" name="btFilter(String field, ArrayList&lt;String> values):ArrayList&lt;Doctor>"/>
+    <ownedOperation xmi:id="_D1AIMJjVEemxk4EmVtaNRQ" name="getDoctorsResult():ArrayList&lt;Doctor>"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_LCsNAJjMEemxk4EmVtaNRQ" name="Csv" visibility="public">
+    <ownedOperation xmi:id="_uVbIkJjREemxk4EmVtaNRQ" name="Csv(Json json)"/>
+    <ownedOperation xmi:id="_yNBFMJjREemxk4EmVtaNRQ" name="get_doctors():ArrayList&lt;Doctor>"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_L8bRYJjMEemxk4EmVtaNRQ" name="Json" visibility="public">
+    <ownedAttribute xmi:id="_kwbPIJjPEemxk4EmVtaNRQ" name="String url_csv" visibility="private"/>
+    <ownedOperation xmi:id="_zNCCoJjPEemxk4EmVtaNRQ" name="Json(String url_json)"/>
+    <ownedOperation xmi:id="_F-0GoJjQEemxk4EmVtaNRQ" name="get_url_csv():String "/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_OaPXoJjMEemxk4EmVtaNRQ" name="Doctor" visibility="public">
+    <ownedAttribute xmi:id="_GbhwcJjTEemxk4EmVtaNRQ" name="HashMap&lt;String,String> attributes"/>
+    <ownedOperation xmi:id="_MonaQJjSEemxk4EmVtaNRQ" name="get_attributes():HashMap&lt;String,String>"/>
+    <ownedOperation xmi:id="_M3GiMJjSEemxk4EmVtaNRQ" name="equals(Doctor anotherDoctor):boolean"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_SmIJQJjMEemxk4EmVtaNRQ" name="Metadata" visibility="public">
+    <ownedAttribute xmi:id="_l-lO4JjQEemxk4EmVtaNRQ" name="String alias" visibility="private"/>
+    <ownedAttribute xmi:id="_tETUYJjQEemxk4EmVtaNRQ" name="String source"/>
+    <ownedAttribute xmi:id="_wLVWwJjQEemxk4EmVtaNRQ" name="String type"/>
+    <ownedOperation xmi:id="_FDR2AJjREemxk4EmVtaNRQ" name="Metadata(String alias,String source,String type)"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_T0rQ8JjVEemxk4EmVtaNRQ" name="main richiama il controller" memberEnd="_T0rQ8ZjVEemxk4EmVtaNRQ _T0rQ9JjVEemxk4EmVtaNRQ" navigableOwnedEnd="_T0rQ8ZjVEemxk4EmVtaNRQ _T0rQ9JjVEemxk4EmVtaNRQ">
+    <ownedEnd xmi:id="_T0rQ8ZjVEemxk4EmVtaNRQ" name="mains" type="_FFIpcJjMEemxk4EmVtaNRQ" association="_T0rQ8JjVEemxk4EmVtaNRQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_T0rQ8pjVEemxk4EmVtaNRQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_T0rQ85jVEemxk4EmVtaNRQ" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_T0rQ9JjVEemxk4EmVtaNRQ" name="controllers" type="_GNpwsJjMEemxk4EmVtaNRQ" association="_T0rQ8JjVEemxk4EmVtaNRQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_T0rQ9ZjVEemxk4EmVtaNRQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_T0rQ9pjVEemxk4EmVtaNRQ" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_Uosu4JjVEemxk4EmVtaNRQ" name="controller richiama json" memberEnd="_Uosu4ZjVEemxk4EmVtaNRQ _Uosu5JjVEemxk4EmVtaNRQ" navigableOwnedEnd="_Uosu4ZjVEemxk4EmVtaNRQ _Uosu5JjVEemxk4EmVtaNRQ">
+    <ownedEnd xmi:id="_Uosu4ZjVEemxk4EmVtaNRQ" name="controllers" type="_GNpwsJjMEemxk4EmVtaNRQ" association="_Uosu4JjVEemxk4EmVtaNRQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Uosu4pjVEemxk4EmVtaNRQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Uosu45jVEemxk4EmVtaNRQ" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_Uosu5JjVEemxk4EmVtaNRQ" name="jsons" type="_L8bRYJjMEemxk4EmVtaNRQ" association="_Uosu4JjVEemxk4EmVtaNRQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Uosu5ZjVEemxk4EmVtaNRQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Uosu5pjVEemxk4EmVtaNRQ" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_VbQ0QJjVEemxk4EmVtaNRQ" name="controller richiama csv" memberEnd="_VbQ0QZjVEemxk4EmVtaNRQ _VbQ0RJjVEemxk4EmVtaNRQ" navigableOwnedEnd="_VbQ0QZjVEemxk4EmVtaNRQ _VbQ0RJjVEemxk4EmVtaNRQ">
+    <ownedEnd xmi:id="_VbQ0QZjVEemxk4EmVtaNRQ" name="controllers" type="_GNpwsJjMEemxk4EmVtaNRQ" association="_VbQ0QJjVEemxk4EmVtaNRQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_VbQ0QpjVEemxk4EmVtaNRQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_VbQ0Q5jVEemxk4EmVtaNRQ" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_VbQ0RJjVEemxk4EmVtaNRQ" name="csvs" type="_LCsNAJjMEemxk4EmVtaNRQ" association="_VbQ0QJjVEemxk4EmVtaNRQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_VbQ0RZjVEemxk4EmVtaNRQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_VbQ0RpjVEemxk4EmVtaNRQ" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_WyGrYJjVEemxk4EmVtaNRQ" name="csv richiama doctor" memberEnd="_WyGrYZjVEemxk4EmVtaNRQ _WyGrZJjVEemxk4EmVtaNRQ" navigableOwnedEnd="_WyGrYZjVEemxk4EmVtaNRQ _WyGrZJjVEemxk4EmVtaNRQ">
+    <ownedEnd xmi:id="_WyGrYZjVEemxk4EmVtaNRQ" name="csvs" type="_LCsNAJjMEemxk4EmVtaNRQ" association="_WyGrYJjVEemxk4EmVtaNRQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_WyGrYpjVEemxk4EmVtaNRQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_WyGrY5jVEemxk4EmVtaNRQ" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_WyGrZJjVEemxk4EmVtaNRQ" name="doctors" type="_OaPXoJjMEemxk4EmVtaNRQ" association="_WyGrYJjVEemxk4EmVtaNRQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_WyGrZZjVEemxk4EmVtaNRQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_WyGrZpjVEemxk4EmVtaNRQ" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_hZybwJjVEemxk4EmVtaNRQ" name="controller richiama metadata" memberEnd="_hZybwZjVEemxk4EmVtaNRQ _hZybxJjVEemxk4EmVtaNRQ" navigableOwnedEnd="_hZybwZjVEemxk4EmVtaNRQ _hZybxJjVEemxk4EmVtaNRQ">
+    <ownedEnd xmi:id="_hZybwZjVEemxk4EmVtaNRQ" name="controllers" type="_GNpwsJjMEemxk4EmVtaNRQ" association="_hZybwJjVEemxk4EmVtaNRQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_hZybwpjVEemxk4EmVtaNRQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_hZybw5jVEemxk4EmVtaNRQ" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_hZybxJjVEemxk4EmVtaNRQ" name="metadatas" type="_SmIJQJjMEemxk4EmVtaNRQ" association="_hZybwJjVEemxk4EmVtaNRQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_hZybxZjVEemxk4EmVtaNRQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_hZybxpjVEemxk4EmVtaNRQ" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_qmD-EJjVEemxk4EmVtaNRQ" name="controller richiama filtermanager" memberEnd="_qmD-EZjVEemxk4EmVtaNRQ _qmD-FJjVEemxk4EmVtaNRQ" navigableOwnedEnd="_qmD-EZjVEemxk4EmVtaNRQ _qmD-FJjVEemxk4EmVtaNRQ">
+    <ownedEnd xmi:id="_qmD-EZjVEemxk4EmVtaNRQ" name="controllers" type="_GNpwsJjMEemxk4EmVtaNRQ" association="_qmD-EJjVEemxk4EmVtaNRQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qmD-EpjVEemxk4EmVtaNRQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qmD-E5jVEemxk4EmVtaNRQ" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_qmD-FJjVEemxk4EmVtaNRQ" name="filtersManagers" type="_JuDVUJjMEemxk4EmVtaNRQ" association="_qmD-EJjVEemxk4EmVtaNRQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qmD-FZjVEemxk4EmVtaNRQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qmD-FpjVEemxk4EmVtaNRQ" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_sMz5cJjVEemxk4EmVtaNRQ" name="filtermanager richiama filter" memberEnd="_sMz5cZjVEemxk4EmVtaNRQ _sMz5dJjVEemxk4EmVtaNRQ" navigableOwnedEnd="_sMz5cZjVEemxk4EmVtaNRQ _sMz5dJjVEemxk4EmVtaNRQ">
+    <ownedEnd xmi:id="_sMz5cZjVEemxk4EmVtaNRQ" name="filtersManagers" type="_JuDVUJjMEemxk4EmVtaNRQ" association="_sMz5cJjVEemxk4EmVtaNRQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_sMz5cpjVEemxk4EmVtaNRQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_sMz5c5jVEemxk4EmVtaNRQ" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_sMz5dJjVEemxk4EmVtaNRQ" name="filters" type="_HhCrMJjMEemxk4EmVtaNRQ" association="_sMz5cJjVEemxk4EmVtaNRQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_sMz5dZjVEemxk4EmVtaNRQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_sMz5dpjVEemxk4EmVtaNRQ" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_O6wNQJjYEemXr5LV-aY1DQ" name="Client">
+    <eAnnotations xmi:id="_O7SYwJjYEemXr5LV-aY1DQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <details xmi:id="_O7SYwZjYEemXr5LV-aY1DQ" key="Human"/>
+    </eAnnotations>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Component" xmi:id="_Rx8c0JjYEemXr5LV-aY1DQ" name="ProgrammaSpring" useCase="_VeKP4JjYEemXr5LV-aY1DQ _XGp3sJjYEemXr5LV-aY1DQ _buJKwJjZEemXr5LV-aY1DQ _gKvR4JjZEemXr5LV-aY1DQ _jzNNYJjZEemXr5LV-aY1DQ">
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_VeKP4JjYEemXr5LV-aY1DQ" name="controllo richiesta" subject="_Rx8c0JjYEemXr5LV-aY1DQ"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_XGp3sJjYEemXr5LV-aY1DQ" name="applico filtri" subject="_Rx8c0JjYEemXr5LV-aY1DQ"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_buJKwJjZEemXr5LV-aY1DQ" name="scarica file" subject="_Rx8c0JjYEemXr5LV-aY1DQ">
+      <include xmi:id="_qeQJEJjZEemXr5LV-aY1DQ" addition="_gKvR4JjZEemXr5LV-aY1DQ"/>
+      <include xmi:id="_rXalsJjZEemXr5LV-aY1DQ" addition="_jzNNYJjZEemXr5LV-aY1DQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_gKvR4JjZEemXr5LV-aY1DQ" name="controllo json" subject="_Rx8c0JjYEemXr5LV-aY1DQ"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_jzNNYJjZEemXr5LV-aY1DQ" name="scarica csv" subject="_Rx8c0JjYEemXr5LV-aY1DQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_XoXdoJjYEemXr5LV-aY1DQ" memberEnd="_XoYEsJjYEemXr5LV-aY1DQ _XoYrwJjYEemXr5LV-aY1DQ">
+    <ownedEnd xmi:id="_XoYEsJjYEemXr5LV-aY1DQ" type="_O6wNQJjYEemXr5LV-aY1DQ" association="_XoXdoJjYEemXr5LV-aY1DQ"/>
+    <ownedEnd xmi:id="_XoYrwJjYEemXr5LV-aY1DQ" type="_VeKP4JjYEemXr5LV-aY1DQ" association="_XoXdoJjYEemXr5LV-aY1DQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_zsCuUJjZEemXr5LV-aY1DQ" memberEnd="_zsCuUZjZEemXr5LV-aY1DQ _zsCuUpjZEemXr5LV-aY1DQ">
+    <ownedEnd xmi:id="_zsCuUZjZEemXr5LV-aY1DQ" type="_VeKP4JjYEemXr5LV-aY1DQ" association="_zsCuUJjZEemXr5LV-aY1DQ"/>
+    <ownedEnd xmi:id="_zsCuUpjZEemXr5LV-aY1DQ" type="_XGp3sJjYEemXr5LV-aY1DQ" association="_zsCuUJjZEemXr5LV-aY1DQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_17PJwJjZEemXr5LV-aY1DQ" memberEnd="_17PJwZjZEemXr5LV-aY1DQ _17Pw0JjZEemXr5LV-aY1DQ">
+    <ownedEnd xmi:id="_17PJwZjZEemXr5LV-aY1DQ" type="_XGp3sJjYEemXr5LV-aY1DQ" association="_17PJwJjZEemXr5LV-aY1DQ"/>
+    <ownedEnd xmi:id="_17Pw0JjZEemXr5LV-aY1DQ" type="_O6wNQJjYEemXr5LV-aY1DQ" association="_17PJwJjZEemXr5LV-aY1DQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Interaction" xmi:id="_CbHx4JjaEemXr5LV-aY1DQ" name="NewModel">
+    <ownedAttribute xmi:id="_Xc1RIJjaEemXr5LV-aY1DQ" name="Client" type="_O6wNQJjYEemXr5LV-aY1DQ"/>
+    <ownedAttribute xmi:id="_ZgmfsJjaEemXr5LV-aY1DQ" name="Main" type="_FFIpcJjMEemxk4EmVtaNRQ"/>
+    <ownedAttribute xmi:id="_edkwAJjaEemXr5LV-aY1DQ" name="Controller" type="_GNpwsJjMEemxk4EmVtaNRQ"/>
+    <ownedAttribute xmi:id="_f-1ucJjaEemXr5LV-aY1DQ" name="Json" type="_L8bRYJjMEemxk4EmVtaNRQ"/>
+    <ownedAttribute xmi:id="_hJ2JAJjaEemXr5LV-aY1DQ" name="Csv" type="_LCsNAJjMEemxk4EmVtaNRQ"/>
+    <ownedAttribute xmi:id="_kac-IJjaEemXr5LV-aY1DQ" name="Doctor" type="_OaPXoJjMEemxk4EmVtaNRQ"/>
+    <ownedAttribute xmi:id="_nTAfoJjaEemXr5LV-aY1DQ" name="Metadata" type="_SmIJQJjMEemxk4EmVtaNRQ"/>
+    <ownedAttribute xmi:id="_rCH1sJjaEemXr5LV-aY1DQ" name="FiltersManager" type="_JuDVUJjMEemxk4EmVtaNRQ"/>
+    <ownedAttribute xmi:id="_sCu-IJjaEemXr5LV-aY1DQ" name="Filter" type="_HhCrMJjMEemxk4EmVtaNRQ"/>
+    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_uszXsJjaEemXr5LV-aY1DQ" name="Controller"/>
+    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_xbZr8JjaEemXr5LV-aY1DQ" name="Json(String url_json)"/>
+    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zzBDkZjaEemXr5LV-aY1DQ" name="Csv(Json json)"/>
+    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_EMGx4ZjbEemXr5LV-aY1DQ" name="metadati():ArrayList&lt;Metadata>"/>
+    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_JGzKQZjbEemXr5LV-aY1DQ" name="Metadata(String alias,String source,String type)"/>
+    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_PeIfwJjbEemXr5LV-aY1DQ" name="data(Map&lt;String,String> param):ArrayList&lt;Doctor>"/>
+    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_g_O_AJjbEemXr5LV-aY1DQ" name="FiltersManager(String jsonFilter,Csv csv)"/>
+    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_kMdwAZjbEemXr5LV-aY1DQ" name="Filter(HashMap&lt;String,Object> mappedjason)"/>
+    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ruNDIZjbEemXr5LV-aY1DQ" name="stat(Map&lt;String,String> param):HashMap&lt;String,String>"/>
+    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_44G4oJjbEemXr5LV-aY1DQ" name="stat(Map&lt;String,String> param):HashMap&lt;String,String>"/>
+    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="__PeDUZjbEemXr5LV-aY1DQ" name="data(Map&lt;String,String> param):ArrayList&lt;Doctor>"/>
+    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_Gaii4JjcEemXr5LV-aY1DQ" name="FiltersManager(String jsonFilter,Csv csv)"/>
+    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_I6DSQZjcEemXr5LV-aY1DQ" name="Filter(HashMap&lt;String,Object> mappedjason)"/>
+    <lifeline xmi:id="_Xc1RIZjaEemXr5LV-aY1DQ" name="Client" represents="_Xc1RIJjaEemXr5LV-aY1DQ" coveredBy="_EMInEJjbEemXr5LV-aY1DQ _PeIfwZjbEemXr5LV-aY1DQ _44G4oZjbEemXr5LV-aY1DQ"/>
+    <lifeline xmi:id="_ZgnGwJjaEemXr5LV-aY1DQ" name="Main" represents="_ZgmfsJjaEemXr5LV-aY1DQ" coveredBy="_usz-wZjaEemXr5LV-aY1DQ _us0l0ZjaEemXr5LV-aY1DQ"/>
+    <lifeline xmi:id="_edkwAZjaEemXr5LV-aY1DQ" name="Controller" represents="_edkwAJjaEemXr5LV-aY1DQ" coveredBy="_usz-wpjaEemXr5LV-aY1DQ _us0l0JjaEemXr5LV-aY1DQ _usz-w5jaEemXr5LV-aY1DQ _xbZr8pjaEemXr5LV-aY1DQ _xbaTAJjaEemXr5LV-aY1DQ _zzBDk5jaEemXr5LV-aY1DQ _zzBqoJjaEemXr5LV-aY1DQ _EMInEZjbEemXr5LV-aY1DQ _EMInEpjbEemXr5LV-aY1DQ _EMInE5jbEemXr5LV-aY1DQ _JGzKQ5jbEemXr5LV-aY1DQ _JGzKR5jbEemXr5LV-aY1DQ _PeIfwpjbEemXr5LV-aY1DQ _PeIfw5jbEemXr5LV-aY1DQ _PeIfxJjbEemXr5LV-aY1DQ _g_O_ApjbEemXr5LV-aY1DQ _g_PmEJjbEemXr5LV-aY1DQ _44G4opjbEemXr5LV-aY1DQ _44HfsJjbEemXr5LV-aY1DQ _44HfsZjbEemXr5LV-aY1DQ _Gaii4pjcEemXr5LV-aY1DQ _GajJ8JjcEemXr5LV-aY1DQ"/>
+    <lifeline xmi:id="_f-2VgJjaEemXr5LV-aY1DQ" name="Json" represents="_f-1ucJjaEemXr5LV-aY1DQ" coveredBy="_xbZr85jaEemXr5LV-aY1DQ _xbZr9ZjaEemXr5LV-aY1DQ _xbZr9JjaEemXr5LV-aY1DQ"/>
+    <lifeline xmi:id="_hJ2JAZjaEemXr5LV-aY1DQ" name="Csv" represents="_hJ2JAJjaEemXr5LV-aY1DQ" coveredBy="_zzBDlJjaEemXr5LV-aY1DQ _zzBDlpjaEemXr5LV-aY1DQ _zzBDlZjaEemXr5LV-aY1DQ"/>
+    <lifeline xmi:id="_kac-IZjaEemXr5LV-aY1DQ" name="Doctor" represents="_kac-IJjaEemXr5LV-aY1DQ"/>
+    <lifeline xmi:id="_nTAfoZjaEemXr5LV-aY1DQ" name="Metadata" represents="_nTAfoJjaEemXr5LV-aY1DQ" coveredBy="_JGzKRJjbEemXr5LV-aY1DQ _JGzKRpjbEemXr5LV-aY1DQ _JGzKRZjbEemXr5LV-aY1DQ"/>
+    <lifeline xmi:id="_rCH1sZjaEemXr5LV-aY1DQ" name="FiltersManager" represents="_rCH1sJjaEemXr5LV-aY1DQ" coveredBy="_g_O_A5jbEemXr5LV-aY1DQ _g_O_BZjbEemXr5LV-aY1DQ _g_O_BJjbEemXr5LV-aY1DQ _kMdwA5jbEemXr5LV-aY1DQ _kMeXEZjbEemXr5LV-aY1DQ _Gaii45jcEemXr5LV-aY1DQ _Gaii5ZjcEemXr5LV-aY1DQ _Gaii5JjcEemXr5LV-aY1DQ _I6D5UJjcEemXr5LV-aY1DQ _I6D5VJjcEemXr5LV-aY1DQ"/>
+    <lifeline xmi:id="_sCu-IZjaEemXr5LV-aY1DQ" name="Filter" represents="_sCu-IJjaEemXr5LV-aY1DQ" coveredBy="_kMdwBJjbEemXr5LV-aY1DQ _kMeXEJjbEemXr5LV-aY1DQ _kMdwBZjbEemXr5LV-aY1DQ _I6D5UZjcEemXr5LV-aY1DQ _I6D5U5jcEemXr5LV-aY1DQ _I6D5UpjcEemXr5LV-aY1DQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_usz-wZjaEemXr5LV-aY1DQ" name="Controller_sender" covered="_ZgnGwJjaEemXr5LV-aY1DQ" message="_usnKcJjaEemXr5LV-aY1DQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_usz-wpjaEemXr5LV-aY1DQ" name="Controller_receiver" covered="_edkwAZjaEemXr5LV-aY1DQ" message="_usnKcJjaEemXr5LV-aY1DQ"/>
+    <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_us0l0JjaEemXr5LV-aY1DQ" name="Controller" covered="_edkwAZjaEemXr5LV-aY1DQ" finish="_usz-w5jaEemXr5LV-aY1DQ" start="_usz-wpjaEemXr5LV-aY1DQ" behavior="_uszXsJjaEemXr5LV-aY1DQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_xbZr8pjaEemXr5LV-aY1DQ" name="Json(String url_json)_sender" covered="_edkwAZjaEemXr5LV-aY1DQ" message="_xbZE4JjaEemXr5LV-aY1DQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_xbZr85jaEemXr5LV-aY1DQ" name="Json(String url_json)_receiver" covered="_f-2VgJjaEemXr5LV-aY1DQ" message="_xbZE4JjaEemXr5LV-aY1DQ"/>
+    <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_xbZr9ZjaEemXr5LV-aY1DQ" name="Json(String url_json)" covered="_f-2VgJjaEemXr5LV-aY1DQ" finish="_xbZr9JjaEemXr5LV-aY1DQ" start="_xbZr85jaEemXr5LV-aY1DQ" behavior="_xbZr8JjaEemXr5LV-aY1DQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_xbZr9JjaEemXr5LV-aY1DQ" name="Json(String url_json)_reply_sender" covered="_f-2VgJjaEemXr5LV-aY1DQ" message="_xbZr8ZjaEemXr5LV-aY1DQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_xbaTAJjaEemXr5LV-aY1DQ" name="Json(String url_json)_reply_receiver" covered="_edkwAZjaEemXr5LV-aY1DQ" message="_xbZr8ZjaEemXr5LV-aY1DQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_zzBDk5jaEemXr5LV-aY1DQ" name="Csv(Json json)_sender" covered="_edkwAZjaEemXr5LV-aY1DQ" message="_zzBDkJjaEemXr5LV-aY1DQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_zzBDlJjaEemXr5LV-aY1DQ" name="Csv(Json json)_receiver" covered="_hJ2JAZjaEemXr5LV-aY1DQ" message="_zzBDkJjaEemXr5LV-aY1DQ"/>
+    <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_zzBDlpjaEemXr5LV-aY1DQ" name="Csv(Json json)" covered="_hJ2JAZjaEemXr5LV-aY1DQ" finish="_zzBDlZjaEemXr5LV-aY1DQ" start="_zzBDlJjaEemXr5LV-aY1DQ" behavior="_zzBDkZjaEemXr5LV-aY1DQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_zzBDlZjaEemXr5LV-aY1DQ" name="Csv(Json json)_reply_sender" covered="_hJ2JAZjaEemXr5LV-aY1DQ" message="_zzBDkpjaEemXr5LV-aY1DQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_zzBqoJjaEemXr5LV-aY1DQ" name="Csv(Json json)_reply_receiver" covered="_edkwAZjaEemXr5LV-aY1DQ" message="_zzBDkpjaEemXr5LV-aY1DQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_usz-w5jaEemXr5LV-aY1DQ" name="Controller_reply_sender" covered="_edkwAZjaEemXr5LV-aY1DQ" message="_usz-wJjaEemXr5LV-aY1DQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_us0l0ZjaEemXr5LV-aY1DQ" name="Controller_reply_receiver" covered="_ZgnGwJjaEemXr5LV-aY1DQ" message="_usz-wJjaEemXr5LV-aY1DQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_EMInEJjbEemXr5LV-aY1DQ" name="metadati():ArrayList&lt;Metadata>_sender" covered="_Xc1RIZjaEemXr5LV-aY1DQ" message="_EMGx4JjbEemXr5LV-aY1DQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_EMInEZjbEemXr5LV-aY1DQ" name="metadati():ArrayList&lt;Metadata>_receiver" covered="_edkwAZjaEemXr5LV-aY1DQ" message="_EMGx4JjbEemXr5LV-aY1DQ"/>
+    <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_EMInEpjbEemXr5LV-aY1DQ" name="metadati():ArrayList&lt;Metadata>" covered="_edkwAZjaEemXr5LV-aY1DQ" finish="_EMInE5jbEemXr5LV-aY1DQ" start="_EMInEZjbEemXr5LV-aY1DQ" behavior="_EMGx4ZjbEemXr5LV-aY1DQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_JGzKQ5jbEemXr5LV-aY1DQ" name="Metadata(String alias,String source,String type)_sender" covered="_edkwAZjaEemXr5LV-aY1DQ" message="_JGzKQJjbEemXr5LV-aY1DQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_JGzKRJjbEemXr5LV-aY1DQ" name="Metadata(String alias,String source,String type)_receiver" covered="_nTAfoZjaEemXr5LV-aY1DQ" message="_JGzKQJjbEemXr5LV-aY1DQ"/>
+    <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_JGzKRpjbEemXr5LV-aY1DQ" name="Metadata(String alias,String source,String type)" covered="_nTAfoZjaEemXr5LV-aY1DQ" finish="_JGzKRZjbEemXr5LV-aY1DQ" start="_JGzKRJjbEemXr5LV-aY1DQ" behavior="_JGzKQZjbEemXr5LV-aY1DQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_JGzKRZjbEemXr5LV-aY1DQ" name="Metadata(String alias,String source,String type)_reply_sender" covered="_nTAfoZjaEemXr5LV-aY1DQ" message="_JGzKQpjbEemXr5LV-aY1DQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_JGzKR5jbEemXr5LV-aY1DQ" name="Metadata(String alias,String source,String type)_reply_receiver" covered="_edkwAZjaEemXr5LV-aY1DQ" message="_JGzKQpjbEemXr5LV-aY1DQ"/>
+    <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_EMInE5jbEemXr5LV-aY1DQ" name="metadati():ArrayList&lt;Metadata>_finish" covered="_edkwAZjaEemXr5LV-aY1DQ" execution="_EMInEpjbEemXr5LV-aY1DQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_PeIfwZjbEemXr5LV-aY1DQ" name="data(Map&lt;String,String> param):ArrayList&lt;Doctor>_sender" covered="_Xc1RIZjaEemXr5LV-aY1DQ" message="_PeH4sJjbEemXr5LV-aY1DQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_PeIfwpjbEemXr5LV-aY1DQ" name="data(Map&lt;String,String> param):ArrayList&lt;Doctor>_receiver" covered="_edkwAZjaEemXr5LV-aY1DQ" message="_PeH4sJjbEemXr5LV-aY1DQ"/>
+    <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_PeIfw5jbEemXr5LV-aY1DQ" name="data(Map&lt;String,String> param):ArrayList&lt;Doctor>" covered="_edkwAZjaEemXr5LV-aY1DQ" finish="_PeIfxJjbEemXr5LV-aY1DQ" start="_PeIfwpjbEemXr5LV-aY1DQ" behavior="_PeIfwJjbEemXr5LV-aY1DQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_g_O_ApjbEemXr5LV-aY1DQ" name="FiltersManager(String jsonFilter,Csv csv)_sender" covered="_edkwAZjaEemXr5LV-aY1DQ" message="_g_OX8JjbEemXr5LV-aY1DQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_g_O_A5jbEemXr5LV-aY1DQ" name="FiltersManager(String jsonFilter,Csv csv)_receiver" covered="_rCH1sZjaEemXr5LV-aY1DQ" message="_g_OX8JjbEemXr5LV-aY1DQ"/>
+    <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_g_O_BZjbEemXr5LV-aY1DQ" name="FiltersManager(String jsonFilter,Csv csv)" covered="_rCH1sZjaEemXr5LV-aY1DQ" finish="_g_O_BJjbEemXr5LV-aY1DQ" start="_g_O_A5jbEemXr5LV-aY1DQ" behavior="_g_O_AJjbEemXr5LV-aY1DQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_kMdwA5jbEemXr5LV-aY1DQ" name="Filter(HashMap&lt;String,Object> mappedjason)_sender" covered="_rCH1sZjaEemXr5LV-aY1DQ" message="_kMdwAJjbEemXr5LV-aY1DQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_kMdwBJjbEemXr5LV-aY1DQ" name="Filter(HashMap&lt;String,Object> mappedjason)_receiver" covered="_sCu-IZjaEemXr5LV-aY1DQ" message="_kMdwAJjbEemXr5LV-aY1DQ"/>
+    <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_kMeXEJjbEemXr5LV-aY1DQ" name="Filter(HashMap&lt;String,Object> mappedjason)" covered="_sCu-IZjaEemXr5LV-aY1DQ" finish="_kMdwBZjbEemXr5LV-aY1DQ" start="_kMdwBJjbEemXr5LV-aY1DQ" behavior="_kMdwAZjbEemXr5LV-aY1DQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_kMdwBZjbEemXr5LV-aY1DQ" name="Filter(HashMap&lt;String,Object> mappedjason)_reply_sender" covered="_sCu-IZjaEemXr5LV-aY1DQ" message="_kMdwApjbEemXr5LV-aY1DQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_kMeXEZjbEemXr5LV-aY1DQ" name="Filter(HashMap&lt;String,Object> mappedjason)_reply_receiver" covered="_rCH1sZjaEemXr5LV-aY1DQ" message="_kMdwApjbEemXr5LV-aY1DQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_g_O_BJjbEemXr5LV-aY1DQ" name="FiltersManager(String jsonFilter,Csv csv)_reply_sender" covered="_rCH1sZjaEemXr5LV-aY1DQ" message="_g_O_AZjbEemXr5LV-aY1DQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_g_PmEJjbEemXr5LV-aY1DQ" name="FiltersManager(String jsonFilter,Csv csv)_reply_receiver" covered="_edkwAZjaEemXr5LV-aY1DQ" message="_g_O_AZjbEemXr5LV-aY1DQ"/>
+    <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_PeIfxJjbEemXr5LV-aY1DQ" name="data(Map&lt;String,String> param):ArrayList&lt;Doctor>_finish" covered="_edkwAZjaEemXr5LV-aY1DQ" execution="_PeIfw5jbEemXr5LV-aY1DQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_44G4oZjbEemXr5LV-aY1DQ" name="stat(Map&lt;String,String> param):HashMap&lt;String,String>_sender" covered="_Xc1RIZjaEemXr5LV-aY1DQ" message="_44GRkJjbEemXr5LV-aY1DQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_44G4opjbEemXr5LV-aY1DQ" name="stat(Map&lt;String,String> param):HashMap&lt;String,String>_receiver" covered="_edkwAZjaEemXr5LV-aY1DQ" message="_44GRkJjbEemXr5LV-aY1DQ"/>
+    <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_44HfsJjbEemXr5LV-aY1DQ" name="stat(Map&lt;String,String> param):HashMap&lt;String,String>" covered="_edkwAZjaEemXr5LV-aY1DQ" finish="_44HfsZjbEemXr5LV-aY1DQ" start="_44G4opjbEemXr5LV-aY1DQ" behavior="_44G4oJjbEemXr5LV-aY1DQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_Gaii4pjcEemXr5LV-aY1DQ" name="FiltersManager(String jsonFilter,Csv csv)_sender" covered="_edkwAZjaEemXr5LV-aY1DQ" message="_Gah70JjcEemXr5LV-aY1DQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_Gaii45jcEemXr5LV-aY1DQ" name="FiltersManager(String jsonFilter,Csv csv)_receiver" covered="_rCH1sZjaEemXr5LV-aY1DQ" message="_Gah70JjcEemXr5LV-aY1DQ"/>
+    <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_Gaii5ZjcEemXr5LV-aY1DQ" name="FiltersManager(String jsonFilter,Csv csv)" covered="_rCH1sZjaEemXr5LV-aY1DQ" finish="_Gaii5JjcEemXr5LV-aY1DQ" start="_Gaii45jcEemXr5LV-aY1DQ" behavior="_Gaii4JjcEemXr5LV-aY1DQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_I6D5UJjcEemXr5LV-aY1DQ" name="Filter(HashMap&lt;String,Object> mappedjason)_sender" covered="_rCH1sZjaEemXr5LV-aY1DQ" message="_I6DSQJjcEemXr5LV-aY1DQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_I6D5UZjcEemXr5LV-aY1DQ" name="Filter(HashMap&lt;String,Object> mappedjason)_receiver" covered="_sCu-IZjaEemXr5LV-aY1DQ" message="_I6DSQJjcEemXr5LV-aY1DQ"/>
+    <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_I6D5U5jcEemXr5LV-aY1DQ" name="Filter(HashMap&lt;String,Object> mappedjason)" covered="_sCu-IZjaEemXr5LV-aY1DQ" finish="_I6D5UpjcEemXr5LV-aY1DQ" start="_I6D5UZjcEemXr5LV-aY1DQ" behavior="_I6DSQZjcEemXr5LV-aY1DQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_I6D5UpjcEemXr5LV-aY1DQ" name="Filter(HashMap&lt;String,Object> mappedjason)_reply_sender" covered="_sCu-IZjaEemXr5LV-aY1DQ" message="_I6DSQpjcEemXr5LV-aY1DQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_I6D5VJjcEemXr5LV-aY1DQ" name="Filter(HashMap&lt;String,Object> mappedjason)_reply_receiver" covered="_rCH1sZjaEemXr5LV-aY1DQ" message="_I6DSQpjcEemXr5LV-aY1DQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_Gaii5JjcEemXr5LV-aY1DQ" name="FiltersManager(String jsonFilter,Csv csv)_reply_sender" covered="_rCH1sZjaEemXr5LV-aY1DQ" message="_Gaii4ZjcEemXr5LV-aY1DQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_GajJ8JjcEemXr5LV-aY1DQ" name="FiltersManager(String jsonFilter,Csv csv)_reply_receiver" covered="_edkwAZjaEemXr5LV-aY1DQ" message="_Gaii4ZjcEemXr5LV-aY1DQ"/>
+    <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_44HfsZjbEemXr5LV-aY1DQ" name="stat(Map&lt;String,String> param):HashMap&lt;String,String>_finish" covered="_edkwAZjaEemXr5LV-aY1DQ" execution="_44HfsJjbEemXr5LV-aY1DQ"/>
+    <message xmi:id="_usnKcJjaEemXr5LV-aY1DQ" name="Controller" receiveEvent="_usz-wpjaEemXr5LV-aY1DQ" sendEvent="_usz-wZjaEemXr5LV-aY1DQ" signature="_y2Is8JjMEemxk4EmVtaNRQ"/>
+    <message xmi:id="_usz-wJjaEemXr5LV-aY1DQ" name="Controller_reply" messageSort="reply" receiveEvent="_us0l0ZjaEemXr5LV-aY1DQ" sendEvent="_usz-w5jaEemXr5LV-aY1DQ"/>
+    <message xmi:id="_xbZE4JjaEemXr5LV-aY1DQ" name="Json(String url_json)" receiveEvent="_xbZr85jaEemXr5LV-aY1DQ" sendEvent="_xbZr8pjaEemXr5LV-aY1DQ" signature="_zNCCoJjPEemxk4EmVtaNRQ"/>
+    <message xmi:id="_xbZr8ZjaEemXr5LV-aY1DQ" name="Json(String url_json)_reply" messageSort="reply" receiveEvent="_xbaTAJjaEemXr5LV-aY1DQ" sendEvent="_xbZr9JjaEemXr5LV-aY1DQ"/>
+    <message xmi:id="_zzBDkJjaEemXr5LV-aY1DQ" name="Csv(Json json)" receiveEvent="_zzBDlJjaEemXr5LV-aY1DQ" sendEvent="_zzBDk5jaEemXr5LV-aY1DQ" signature="_uVbIkJjREemxk4EmVtaNRQ"/>
+    <message xmi:id="_zzBDkpjaEemXr5LV-aY1DQ" name="Csv(Json json)_reply" messageSort="reply" receiveEvent="_zzBqoJjaEemXr5LV-aY1DQ" sendEvent="_zzBDlZjaEemXr5LV-aY1DQ"/>
+    <message xmi:id="_EMGx4JjbEemXr5LV-aY1DQ" name="metadati():ArrayList&lt;Metadata>" messageSort="asynchCall" receiveEvent="_EMInEZjbEemXr5LV-aY1DQ" sendEvent="_EMInEJjbEemXr5LV-aY1DQ" signature="_8ki2gJjNEemxk4EmVtaNRQ"/>
+    <message xmi:id="_JGzKQJjbEemXr5LV-aY1DQ" name="Metadata(String alias,String source,String type)" receiveEvent="_JGzKRJjbEemXr5LV-aY1DQ" sendEvent="_JGzKQ5jbEemXr5LV-aY1DQ" signature="_FDR2AJjREemxk4EmVtaNRQ"/>
+    <message xmi:id="_JGzKQpjbEemXr5LV-aY1DQ" name="Metadata(String alias,String source,String type)_reply" messageSort="reply" receiveEvent="_JGzKR5jbEemXr5LV-aY1DQ" sendEvent="_JGzKRZjbEemXr5LV-aY1DQ"/>
+    <message xmi:id="_PeH4sJjbEemXr5LV-aY1DQ" name="data(Map&lt;String,String> param):ArrayList&lt;Doctor>" messageSort="asynchCall" receiveEvent="_PeIfwpjbEemXr5LV-aY1DQ" sendEvent="_PeIfwZjbEemXr5LV-aY1DQ" signature="_zaewIJjMEemxk4EmVtaNRQ"/>
+    <message xmi:id="_g_OX8JjbEemXr5LV-aY1DQ" name="FiltersManager(String jsonFilter,Csv csv)" receiveEvent="_g_O_A5jbEemXr5LV-aY1DQ" sendEvent="_g_O_ApjbEemXr5LV-aY1DQ" signature="_O0NdMJjUEemxk4EmVtaNRQ"/>
+    <message xmi:id="_g_O_AZjbEemXr5LV-aY1DQ" name="FiltersManager(String jsonFilter,Csv csv)_reply" messageSort="reply" receiveEvent="_g_PmEJjbEemXr5LV-aY1DQ" sendEvent="_g_O_BJjbEemXr5LV-aY1DQ"/>
+    <message xmi:id="_kMdwAJjbEemXr5LV-aY1DQ" name="Filter(HashMap&lt;String,Object> mappedjason)" receiveEvent="_kMdwBJjbEemXr5LV-aY1DQ" sendEvent="_kMdwA5jbEemXr5LV-aY1DQ" signature="_fIicwJjTEemxk4EmVtaNRQ"/>
+    <message xmi:id="_kMdwApjbEemXr5LV-aY1DQ" name="Filter(HashMap&lt;String,Object> mappedjason)_reply" messageSort="reply" receiveEvent="_kMeXEZjbEemXr5LV-aY1DQ" sendEvent="_kMdwBZjbEemXr5LV-aY1DQ"/>
+    <message xmi:id="_44GRkJjbEemXr5LV-aY1DQ" name="stat(Map&lt;String,String> param):HashMap&lt;String,String>" messageSort="asynchCall" receiveEvent="_44G4opjbEemXr5LV-aY1DQ" sendEvent="_44G4oZjbEemXr5LV-aY1DQ" signature="_zE3FcJjMEemxk4EmVtaNRQ"/>
+    <message xmi:id="_Gah70JjcEemXr5LV-aY1DQ" name="FiltersManager(String jsonFilter,Csv csv)" receiveEvent="_Gaii45jcEemXr5LV-aY1DQ" sendEvent="_Gaii4pjcEemXr5LV-aY1DQ" signature="_O0NdMJjUEemxk4EmVtaNRQ"/>
+    <message xmi:id="_Gaii4ZjcEemXr5LV-aY1DQ" name="FiltersManager(String jsonFilter,Csv csv)_reply" messageSort="reply" receiveEvent="_GajJ8JjcEemXr5LV-aY1DQ" sendEvent="_Gaii5JjcEemXr5LV-aY1DQ"/>
+    <message xmi:id="_I6DSQJjcEemXr5LV-aY1DQ" name="Filter(HashMap&lt;String,Object> mappedjason)" receiveEvent="_I6D5UZjcEemXr5LV-aY1DQ" sendEvent="_I6D5UJjcEemXr5LV-aY1DQ" signature="_fIicwJjTEemxk4EmVtaNRQ"/>
+    <message xmi:id="_I6DSQpjcEemXr5LV-aY1DQ" name="Filter(HashMap&lt;String,Object> mappedjason)_reply" messageSort="reply" receiveEvent="_I6D5VJjcEemXr5LV-aY1DQ" sendEvent="_I6D5UpjcEemXr5LV-aY1DQ"/>
+  </packagedElement>
+</uml:Model>
