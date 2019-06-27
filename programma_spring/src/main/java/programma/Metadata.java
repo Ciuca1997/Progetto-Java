@@ -2,15 +2,15 @@ package programma;
 
 public class Metadata {
 	
-		////////////////////////////////////////////////////////////attributes
+		
+		//attributi che descrivono i metadati
+		private String alias;
+		private String source;
+		private String type;
+		
+		
 	
-		String alias;
-		String source;
-		String type;
-		
-		
-		///////////////////////////////////////////////////////////constructor
-		
+		//costruttore
 		public Metadata(String alias,String source,String type) {
 			this.alias=alias;
 			this.source=source;
@@ -19,8 +19,8 @@ public class Metadata {
 
 
 		
-		///////////////////////////////////////////////////////////getters and setters
 		
+		//metodi get e set
 		public String getAlias() {
 			return alias;
 		}

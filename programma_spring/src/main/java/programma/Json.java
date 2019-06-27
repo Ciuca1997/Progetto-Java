@@ -19,6 +19,8 @@ public class Json {
 	 * manage json source and read csv url
 	 */
 	private String url_csv;//variabile che immagazzina url csv
+	
+	//costruttore
 	public Json(String url_json) {
 		/**
 		 * parsing json file and save csv url
@@ -30,7 +32,7 @@ public class Json {
 		File json_local=new File("./json");
 		if(json_local.exists()==false) {
 			//se non è presente lo scarica
-			try {
+			try {  //controllo la connessione
 				//apro connessione
 				HttpURLConnection connection=(HttpURLConnection)(new URL(url_json)).openConnection();
 				connection.setRequestMethod("GET");
@@ -49,7 +51,7 @@ public class Json {
 				in.close();
 				out.close();
 			}
-			catch(Exception ex){
+			catch(Exception ex){  //se ci sono problemi termino il programma
 				System.out.println("failed to save json:");
 				System.out.println(ex.getMessage());
 				System.exit(-1);
@@ -59,7 +61,7 @@ public class Json {
 		//parsing file locale ed inizializzazione della variabile puntatore a csv
 		String json_data="";
 		int url_start,url_end;
-		try {
+		try {  //controllo il file json locale
 			in = new FileInputStream(new File("./json"));
 			int reads=0;
 			while(reads!=-1) {
@@ -70,12 +72,14 @@ public class Json {
 		url_end=url_start+json_data.substring(url_start, json_data.length()).indexOf(",")-1;
 		url_csv=json_data.substring(url_start, url_end);
 		url_csv=url_csv.replace("\\","");
-		} catch (Exception ex) {
+		} catch (Exception ex) {  //se  ci sono problemi chiudo il programma
 			System.out.println("failed to load local json:");
 			System.out.println(ex.getMessage());
 			System.exit(-1);
 		}
 	}
+	
+	//metodo get
 	public String get_url_csv() {//permette di accedere alla variabile url_csv
 		/**
 		 * return csv url

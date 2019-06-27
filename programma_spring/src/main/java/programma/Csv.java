@@ -16,6 +16,8 @@ public class Csv {
 	 * class that manage all information in csv file
 	 */
 	private ArrayList<Doctor>doctors=new ArrayList<Doctor>();//mappa dati csv
+	
+	//costruttore
 	public Csv(Json json) {
 		/**
 		 * inizializes array of doctor with parsed field
@@ -60,6 +62,9 @@ public class Csv {
 			}
 		}
 	}
+	
+	
+	//metodo get
 	public ArrayList<Doctor> get_doctors() {
 		/**
 		 * return array of doctor

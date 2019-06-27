@@ -12,13 +12,17 @@ public class Doctor {
 	 * doctor class used to map information
 	 */
 	public HashMap<String,String>attributes=new HashMap<String, String>();//public perchè spring serializza solo attributi public
+	
+	//costruttore
 	HashMap<String,String> get_attributes(){
 		/**
 		 * return hasmap where are mapped the attributes
 		 */
 		return attributes;
 	}
-	public boolean equals(Doctor anotherDoctor) {
+	
+	//metodo equals
+	public boolean equals(Doctor anotherDoctor) {  //controllo se due Doctor sono uguali
 		return(attributes.equals(anotherDoctor.get_attributes()));
 	}
 }
